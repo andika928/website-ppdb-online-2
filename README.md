@@ -1,4 +1,4 @@
-﻿# SMP Katolik St. Yoseph Luwuk — PPDB Online
+# SMP Katolik St. Yoseph Luwuk — PPDB Online
 
 Portal siswa `/ppdb`, panel panitia terpisah `/admin`, dan website profil `/` menggunakan backend Node.js serta database MySQL/MariaDB XAMPP yang sama. Memerlukan Node.js 24 atau lebih baru dan paket `mysql2`. Tidak memakai API AI. Biaya server/domain, jika dipublikasikan, mengikuti penyedia hosting.
 
