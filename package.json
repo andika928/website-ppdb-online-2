@@ -4,10 +4,12 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "test": "node --test tests/ppdb.test.js tests/api-client.test.js tests/mysql.test.js tests/vercel.test.js",
+    "test": "node --test tests/ppdb.test.js tests/api-client.test.js tests/mysql.test.js tests/vercel.test.js tests/cloud-migration.test.js",
     "admin:create": "node server.js --create-admin",
     "db:setup": "node scripts/db-setup.js",
-    "db:migrate": "node scripts/migrate-sqlite.js"
+    "db:migrate": "node scripts/migrate-sqlite.js",
+    "db:migrate:online": "node scripts/migrate-mysql-online.js",
+    "vercel:configure-db": "node scripts/configure-vercel-db.js"
   },
   "engines": {
     "node": "24.x"

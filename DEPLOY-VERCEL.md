@@ -41,6 +41,19 @@ Untuk memindahkan data MySQL lokal, lakukan dump/restore terpisah ke penyedia ya
 
 Redeploy setelah konfigurasi berubah. Periksa `/api/health`, login, pendaftaran, unggahan 2 MB dan hasil seleksi sebelum menerima pendaftar nyata.
 
+## Migrasi MySQL XAMPP ke MySQL online
+
+1. Buat layanan MySQL di akun penyedia Anda. Aiven menawarkan paket Free dengan kuota terbatas; pastikan memilih Free, bukan trial paket berbayar.
+2. Simpan koneksi tujuan di `data/cloud-mysql.env` (diabaikan Git dan deployment). Gunakan `DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`, dan `DB_SSL=true`. Password mengandung `#` harus diapit tanda kutip. Isi `DB_SSL_CA_FILE=cloud-mysql-ca.pem` jika sertifikat disimpan di folder data yang sama.
+3. Database lokal tetap mengikuti `.env` utama. Jangan mengganti `.env` lokal dengan konfigurasi tujuan. Database online tujuan harus kosong dan sudah tersedia, misalnya `defaultdb` dari Aiven.
+4. Hentikan server PPDB lokal sebelum migrasi dan biarkan berhenti sampai perpindahan selesai. Ini mencegah pendaftaran baru masuk ke sumber setelah snapshot diambil. Jangan aktifkan environment database Vercel sebelum migrasi.
+5. Jalankan `npm run db:migrate:online`. Skrip mengambil snapshot read-only, menyimpan cadangan JSON di `data/backups/`, menyalin seluruh tabel kecuali sesi, dan memverifikasi data sebelum commit. Kolom biner pada backup JSON tersimpan dalam bentuk objek Buffer. Backup ini bukan SQL untuk phpMyAdmin dan mengandung data privat: jangan dibagikan atau diunggah.
+6. Jalankan `npm run vercel:configure-db`. Skrip menguji koneksi online dan superadmin aktif, lalu menyimpan konfigurasi sebagai secret produksi melalui stdin CLI Vercel. Nilai password tidak dicetak atau ditulis ke argumen proses.
+7. Jalankan `npx vercel --prod` dan periksa `/api/health`, login, dan dokumen. Hash password serta kode akses tetap sama. Sesi lama tidak dipindah sehingga panitia harus login ulang.
+8. Setelah beralih, gunakan Vercel sebagai layanan aktif. Menjalankan server lokal lagi dengan database lokal akan membuat dua database terpisah; data tidak tersinkron otomatis. Untuk rollback, hentikan akses penulisan terlebih dahulu dan rekonsiliasi data online yang masuk setelah perpindahan.
+
+Jika skrip gagal, jangan menghapus database sumber. Kegagalan penyalinan akan me-rollback baris di tujuan; tabel kosong hasil inisialisasi bisa tetap ada. Konfigurasi Vercel dipasang setelah penyalinan berhasil, bukan saat backup baru dibuat.
+
 ## Batas operasional
 
 Rate limit aplikasi masih per instance Node.js, sehingga bukan pembatasan global pada semua instance Vercel. Tambahkan aturan WAF/rate limit yang sesuai sebelum layanan dibuka ke publik. Sesi, dokumen, dan data pendaftaran tetap persisten di MySQL. Jangan memakai database produksi untuk pengujian otomatis; tes memerlukan hak membuat dan menghapus database sementara.

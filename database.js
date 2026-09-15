@@ -32,11 +32,14 @@ async function openDatabase(options = config()) {
         run: async (...args) => { const result = await execute(sql, args); return { changes: result.affectedRows, lastInsertRowid: result.insertId }; }
       };
     },
-    async transaction(fn) {
+    async transaction(fn, { readOnly = false } = {}) {
       if (context.getStore()) return fn();
       const connection = await pool.getConnection();
       try {
-        await connection.beginTransaction();
+        if (readOnly) {
+          await connection.query('SET TRANSACTION ISOLATION LEVEL REPEATABLE READ');
+          await connection.query('START TRANSACTION WITH CONSISTENT SNAPSHOT, READ ONLY');
+        } else await connection.beginTransaction();
         const result = await context.run(connection, fn);
         await connection.commit();
         return result;
