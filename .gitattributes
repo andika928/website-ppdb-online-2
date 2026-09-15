@@ -1,0 +1,14 @@
+# Keep text files consistent across Windows and other operating systems.
+* text=auto eol=lf
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Binary assets must never undergo line-ending conversion.
+*.png -text
+*.jpg -text
+*.jpeg -text
+*.webp -text
+*.ico -text
+*.pdf -text
+*.sqlite -text
+*.bundle -text

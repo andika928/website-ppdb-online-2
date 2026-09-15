@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BRASFIELD & GORRIE | General Contractors & Construction Leaders</title>
+  <meta name="description"
+    content="Brasfield & Gorrie is one of the nation's largest privately held construction firms, delivering landmark projects across commercial, government, healthcare, and infrastructure.">
+
+  <!-- Modern Google Fonts: Barlow Condensed for architectural headlines, Inter & Outfit for sleek body and metrics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Cinzel:wght@600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <!-- FontAwesome for crisp modern icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Instant Section View Mode Support -->
+  <script>
+    (function () {
+      const p = new URLSearchParams(window.location.search);
+      const v = p.get('view');
+      if (v) document.documentElement.classList.add('view-' + v);
+    })();
+  </script>
+</head>
+
+<body>
+
+  <!-- Fixed Navigation Header (Transparent over hero at top, White & sticky when scrolling down) -->
+  <header class="site-header" id="navbar">
+    <div class="header-container">
+
+      <!-- Brand Logo -->
+      <a href="#" class="brand-logo" aria-label="Brasfield & Gorrie Home">
+        <span class="logo-main">MY PORTOFOLIO</span>
+        <!-- <span class="logo-amp">&amp;</span> -->
+        <span class="logo-sub"></span>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="main-nav" aria-label="Main Navigation">
+        <ul class="nav-list">
+          <li class="nav-item">
+            <a href="#about-us" class="nav-link" data-i18n="nav.about">ABOUT US</a>
+          </li>
+          <li class="nav-item">
+            <a href="#careers" class="nav-link" data-i18n="nav.careers">CAREERS</a>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="#hero" class="nav-link"><span data-i18n="nav.markets">MARKETS</span> <i
+                class="fa-solid fa-angle-down nav-arrow"></i></a>
+            <div class="nav-dropdown">
+              <div class="dropdown-column">
+                <span class="dropdown-title" data-i18n="nav.sectors">Sectors</span>
+                <a href="#hero" class="dropdown-item" data-sector="commercial"
+                  data-i18n="market.commercial">Commercial</a>
+                <a href="#hero" class="dropdown-item" data-sector="government"
+                  data-i18n="market.government">Government</a>
+                <a href="#hero" class="dropdown-item" data-sector="healthcare"
+                  data-i18n="market.healthcare">Healthcare</a>
+                <a href="#hero" class="dropdown-item" data-sector="heavy-civil" data-i18n="market.heavy_civil">Heavy
+                  Civil</a>
+                <a href="#hero" class="dropdown-item" data-sector="industrial"
+                  data-i18n="market.industrial">Industrial</a>
+                <a href="#hero" class="dropdown-item" data-sector="mission-critical"
+                  data-i18n="market.mission_critical">Mission Critical</a>
+              </div>
+              <div class="dropdown-card">
+                <div class="dropdown-badge" data-i18n="nav.featured_badge">FEATURED</div>
+                <h4 data-i18n="nav.featured_title">Federal &amp; Municipal Work</h4>
+                <p data-i18n="nav.featured_desc">Delivering secure, resilient civic architecture across 17 states.</p>
+                <a href="#projects-grid" class="view-more"><span data-i18n="nav.view_projects">View Projects</span> <i
+                    class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a href="#solutions" class="nav-link" data-i18n="nav.what_we_do">WHAT WE DO</a>
+          </li>
+          <li class="nav-item">
+            <a href="#featured-projects" class="nav-link" data-i18n="nav.news">NEWS</a>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link" data-i18n="nav.contact">CONTACT</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- Utility Actions (Search, Language, Mobile Toggle - matching Screenshot 1 exactly) -->
+      <div class="header-actions">
+        <!-- Search Trigger Button -->
+        <button class="icon-btn search-trigger" id="searchBtn" aria-label="Open Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Language Selector (English & Bahasa Indonesia) -->
+        <div class="language-dropdown">
+          <button class="lang-btn" id="langBtn" aria-label="Select Language">
+            <span id="currentLangCode">EN</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="lang-menu" id="langMenu">
+            <a href="#" class="lang-item active" data-lang="en">English (EN)</a>
+            <a href="#" class="lang-item" data-lang="id">Bahasa Indonesia (ID)</a>
+          </div>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle Menu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-list">
+        <li><a href="#about-us" class="mobile-nav-link">ABOUT US</a></li>
+        <li><a href="#careers" class="mobile-nav-link">CAREERS</a></li>
+        <li><a href="#hero" class="mobile-nav-link">MARKETS</a></li>
+        <li><a href="#solutions" class="mobile-nav-link">WHAT WE DO</a></li>
+        <li><a href="#featured-projects" class="mobile-nav-link">NEWS</a></li>
+        <li><a href="#projects-grid" class="mobile-nav-link">PROJECTS</a></li>
+        <li><a href="#contact" class="mobile-nav-link">CONTACT</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+        <a href="#contact" class="btn btn-yellow btn-block">START A PROJECT</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Overlay Modal -->
+  <div class="search-overlay" id="searchOverlay">
+    <div class="search-modal-box">
+      <div class="search-input-wrap">
+        <i class="fa-solid fa-magnifying-glass search-icon-input"></i>
+        <input type="text" id="searchInput" placeholder="Search markets, projects, people, news..."
+          data-i18n-placeholder="search.placeholder" autocomplete="off">
+        <button class="close-search-btn" id="closeSearchBtn" aria-label="Close Search">&times;</button>
+      </div>
+      <div class="search-quick-tags">
+        <span data-i18n="search.popular">Popular:</span>
+        <button class="quick-tag" data-query="Government" data-i18n="market.government">Government</button>
+        <button class="quick-tag" data-query="Healthcare" data-i18n="market.healthcare">Healthcare</button>
+        <button class="quick-tag" data-query="Commercial" data-i18n="market.commercial">Commercial</button>
+        <button class="quick-tag" data-query="Careers" data-i18n="nav.careers">Careers</button>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- SECTION 1: HERO MARKET SECTOR SLIDER (Image 1 exact reference) -->
+    <section class="hero-slider-section" id="hero" aria-label="Market Sector Hero">
+
+      <!-- Slide Track -->
+      <div class="hero-slides-container">
+
+        <!-- Slide 1: Commercial (Index 0) -->
+        <article class="hero-slide" data-sector-id="commercial" style="--slide-bg: url('assets/commercial.jpg');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content-wrap">
+            <h2 class="hero-title" data-i18n="hero.comm_title">COMMERCIAL</h2>
+            <p class="hero-subtitle" data-i18n="hero.comm_subtitle">
+              Creating high-performance office towers, dynamic corporate headquarters, and inspiring mixed-use
+              developments.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects-grid" class="btn-hero-single" data-i18n="hero.comm_btn">COMMERCIAL</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 2: Government (Index 1 - Active Default matching Screenshot 1) -->
+        <article class="hero-slide active" data-sector-id="government"
+          style="--slide-bg: url('assets/government.jpg');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content-wrap">
+            <h1 class="hero-title" data-i18n="hero.govt_title">GOVERNMENT</h1>
+            <p class="hero-subtitle" data-i18n="hero.govt_subtitle">
+              We are honored to provide best-value design and construction for those who serve our nation.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects-grid" class="btn-hero-single" data-i18n="hero.govt_btn">GOVERNMENT</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 3: Healthcare (Index 2) -->
+        <article class="hero-slide" data-sector-id="healthcare"
+          style="--slide-bg: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=2070&auto=format&fit=crop');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content-wrap">
+            <h2 class="hero-title" data-i18n="hero.health_title">HEALTHCARE</h2>
+            <p class="hero-subtitle" data-i18n="hero.health_subtitle">
+              Building cutting-edge hospitals, surgical pavilions, and research spaces where lifesaving care happens
+              every day.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects-grid" class="btn-hero-single" data-i18n="hero.health_btn">HEALTHCARE</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 4: Heavy Civil -->
+        <article class="hero-slide" data-sector-id="heavy-civil"
+          style="--slide-bg: url('https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=2070&auto=format&fit=crop');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content-wrap">
+            <h2 class="hero-title" data-i18n="hero.civil_title">HEAVY CIVIL</h2>
+            <p class="hero-subtitle" data-i18n="hero.civil_subtitle">
+              Constructing bridges, transportation corridors, water treatment plants, and major civil infrastructure
+              built to endure.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects-grid" class="btn-hero-single" data-i18n="hero.civil_btn">HEAVY CIVIL</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 5: Industrial -->
+        <article class="hero-slide" data-sector-id="industrial"
+          style="--slide-bg: url('https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content-wrap">
+            <h2 class="hero-title" data-i18n="hero.ind_title">INDUSTRIAL</h2>
+            <p class="hero-subtitle" data-i18n="hero.ind_subtitle">
+              Delivering high-tech manufacturing plants, automated distribution centers, and specialized processing
+              facilities.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects-grid" class="btn-hero-single" data-i18n="hero.ind_btn">INDUSTRIAL</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Slide 6: Mission Critical -->
+        <article class="hero-slide" data-sector-id="mission-critical"
+          style="--slide-bg: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2070&auto=format&fit=crop');">
+          <div class="slide-overlay"></div>
+          <div class="slide-content-wrap">
+            <h2 class="hero-title" data-i18n="hero.mc_title">MISSION CRITICAL</h2>
+            <p class="hero-subtitle" data-i18n="hero.mc_subtitle">
+              Engineering high-density data centers, secure sub-stations, and fail-safe redundancy systems at scale.
+            </p>
+            <div class="hero-actions">
+              <a href="#projects-grid" class="btn-hero-single" data-i18n="hero.mc_btn">MISSION CRITICAL</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- Bottom Market Navigation Bar with Progress Indicator (Matches Screenshot 1) -->
+      <nav class="hero-market-bar" aria-label="Market Sectors Carousel Navigation">
+        <!-- Progress track indicator -->
+        <div class="market-progress-line-track">
+          <div class="market-progress-line-active" id="heroProgress"></div>
+        </div>
+
+        <div class="market-bar-inner">
+          <div class="market-logo-icon" title="Brasfield & Gorrie Emblem">
+            <i class="fa-solid fa-shapes"></i>
+          </div>
+
+          <ul class="market-nav-list" role="tablist">
+            <li class="market-tab" role="tab" data-target="commercial" tabindex="0">
+              <span class="tab-label" data-i18n="market.commercial">Commercial</span>
+            </li>
+            <li class="market-tab active" role="tab" data-target="government" tabindex="0">
+              <span class="tab-label" data-i18n="market.government">Government</span>
+            </li>
+            <li class="market-tab" role="tab" data-target="healthcare" tabindex="0">
+              <span class="tab-label" data-i18n="market.healthcare">Healthcare</span>
+            </li>
+            <li class="market-tab" role="tab" data-target="heavy-civil" tabindex="0">
+              <span class="tab-label" data-i18n="market.heavy_civil">Heavy Civil</span>
+            </li>
+            <li class="market-tab" role="tab" data-target="industrial" tabindex="0">
+              <span class="tab-label" data-i18n="market.industrial">Industrial</span>
+            </li>
+            <li class="market-tab" role="tab" data-target="mission-critical" tabindex="0">
+              <span class="tab-label" data-i18n="market.mission_critical">Mission Critical</span>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+    </section>
+
+    <!-- SECTION 2: STATS & COMPANY ESSENCE "us" (Image 2 reference) -->
+    <section class="stats-section" id="about-us" aria-label="About Brasfield & Gorrie">
+      <div class="stats-container">
+
+        <!-- Left Side: Massive Title and Numbers -->
+        <div class="stats-content-col">
+          <div class="section-tag-row">
+            <span class="section-tag yellow-tag" data-i18n="stats.tag">COMPANY IMPACT</span>
+            <span class="tag-divider">/</span>
+            <span class="section-tag-sub" data-i18n="stats.subtag">MEASURABLE SCALE</span>
+          </div>
+
+          <h2 class="stats-massive-title" data-i18n="stats.title">us</h2>
+
+          <div class="stats-list">
+
+            <div class="stat-row">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-target="5000">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label" data-i18n="stats.employees">employees</div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-target="445">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label" data-i18n="stats.projects">active projects</div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-target="17">0</span>
+              </div>
+              <div class="stat-label" data-i18n="stats.states">states with active projects</div>
+            </div>
+
+            <div class="stat-row">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-target="60">0</span>
+                <span class="stat-plus">+</span>
+              </div>
+              <div class="stat-label" data-i18n="stats.years">years in business</div>
+            </div>
+
+          </div>
+
+          <div class="stats-bottom-action">
+            <a href="#careers" class="btn btn-yellow-outline">
+              <span data-i18n="stats.cta">EXPLORE OUR CULTURE</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side: Signature Curved Architectural Mask with Crane Skyline -->
+        <div class="stats-image-col">
+          <div class="curved-mask-container">
+            <div class="curved-mask-shape" style="background-image: url('assets/city_skyline.jpg');" role="img"
+              aria-label="City skyline view with active construction tower crane">
+              <div class="curved-mask-badge">
+                <i class="fa-solid fa-building-shield"></i>
+                <div>
+                  <strong data-i18n="stats.badge_title">NATIONWIDE FOOTPRINT</strong>
+                  <p data-i18n="stats.badge_sub">13 Regional Hubs &bull; $5.8B Volume</p>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative Architectural CAD Guide Lines -->
+            <div class="arch-cad-lines arch-lines-right">
+              <span class="cad-dot"></span>
+              <span class="cad-ruler">EL. +480'-0"</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: JOIN OUR TEAM / CAREERS (Image 3 reference) -->
+    <section class="careers-section" id="careers" aria-label="Join Our Team">
+      <div class="careers-container">
+
+        <!-- Left Side: Mirrored Curved Mask with Construction Site & Hardhat Engineers -->
+        <div class="careers-image-col">
+          <div class="curved-mask-container mask-mirrored">
+            <div class="curved-mask-shape" style="background-image: url('assets/careers_worker.jpg');" role="img"
+              aria-label="Construction engineer smiling in safety helmet and high-visibility gear on building deck">
+              <div class="curved-mask-badge badge-yellow">
+                <i class="fa-solid fa-award"></i>
+                <div>
+                  <strong data-i18n="careers.badge_top">TOP WORKPLACE 2026</strong>
+                  <p data-i18n="careers.badge_sub">Highest Retention &amp; Mentorship</p>
+                </div>
+              </div>
+            </div>
+            <!-- Decorative CAD Lines -->
+            <div class="arch-cad-lines arch-lines-left">
+              <span class="cad-dot"></span>
+              <span class="cad-ruler">GRID B-4 // STRUCTURAL CORE</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Content Matching Image 3 -->
+        <div class="careers-content-col">
+          <span class="careers-badge" data-i18n="careers.badge">JOIN OUR TEAM</span>
+
+          <h2 class="careers-title" data-i18n="careers.title">A career built to last</h2>
+
+          <p class="careers-desc" data-i18n="careers.desc">
+            You bring the spirit and drive. We’ll bring the opportunity—to learn, grow, and do great work with greater
+            people.
+          </p>
+
+          <div class="careers-perks-grid">
+            <div class="perk-item">
+              <div class="perk-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="perk-info">
+                <h4 data-i18n="careers.perk1_title">Continuous Training</h4>
+                <p data-i18n="careers.perk1_desc">Leadership academies and trade mastery certifications.</p>
+              </div>
+            </div>
+            <div class="perk-item">
+              <div class="perk-icon"><i class="fa-solid fa-shield-heart"></i></div>
+              <div class="perk-info">
+                <h4 data-i18n="careers.perk2_title">Safety First Culture</h4>
+                <p data-i18n="careers.perk2_desc">Industry-leading EMR safety record of 0.48.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="careers-cta-row">
+            <a href="#contact" class="btn btn-careers-apply" data-i18n="careers.btn_apply">APPLY NOW</a>
+            <a href="#about-us" class="link-arrow-box">
+              <span data-i18n="careers.btn_why">Why work here</span>
+              <span class="arrow-box"><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: FEATURED PROJECTS SLIDER (Image 4 reference) -->
+    <section class="featured-projects-section" id="featured-projects" aria-label="Featured Projects Showcase">
+      <div class="featured-projects-wrapper">
+
+        <!-- Project Slide 1: FORTH Hotel and Club (Image 4 Exact Reference) -->
+        <article class="project-showcase-slide active" data-project-index="0"
+          style="--proj-bg: url('assets/forth_hotel.jpg');">
+          <div class="proj-dark-gradient"></div>
+          <div class="proj-slide-content">
+            <div class="proj-category-pill" data-i18n="proj.cat">HOSPITALITY &bull; ATLANTA, GA</div>
+            <h2 class="proj-headline" data-i18n="proj.title">
+              Building holistic hospitality in Historic Old Fourth Ward
+            </h2>
+            <div class="proj-sub-link-wrap">
+              <a href="#projects-grid" class="proj-sub-link">
+                <span data-i18n="proj.hotel">FORTH Hotel and Club</span>
+                <span class="proj-link-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Slide 2: Apex Medical Innovation Tower -->
+        <article class="project-showcase-slide" data-project-index="1"
+          style="--proj-bg: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1920&auto=format&fit=crop');">
+          <div class="proj-dark-gradient"></div>
+          <div class="proj-slide-content">
+            <div class="proj-category-pill">HEALTHCARE &bull; NASHVILLE, TN</div>
+            <h2 class="proj-headline">
+              Transforming modern surgery with biophilic design and precision robotic suites
+            </h2>
+            <div class="proj-sub-link-wrap">
+              <a href="#projects-grid" class="proj-sub-link">
+                <span>Vanderbilt Surgical Pavilion</span>
+                <span class="proj-link-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project Slide 3: Landmark Federal Courthouse -->
+        <article class="project-showcase-slide" data-project-index="2"
+          style="--proj-bg: url('https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=1920&auto=format&fit=crop');">
+          <div class="proj-dark-gradient"></div>
+          <div class="proj-slide-content">
+            <div class="proj-category-pill">GOVERNMENT &bull; BIRMINGHAM, AL</div>
+            <h2 class="proj-headline">
+              Preserving constitutional majesty with blast-resistant sustainable stonework
+            </h2>
+            <div class="proj-sub-link-wrap">
+              <a href="#projects-grid" class="proj-sub-link">
+                <span>Hugo L. Black U.S. Courthouse</span>
+                <span class="proj-link-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Bottom Controls Matching Image 4 -->
+        <div class="proj-bottom-nav">
+          <!-- Progress Bar Line -->
+          <div class="proj-progress-track">
+            <div class="proj-progress-bar" id="projProgressBar"></div>
+          </div>
+
+          <!-- Arrow Controls -->
+          <div class="proj-nav-buttons">
+            <button class="proj-nav-btn" id="projPrevBtn" aria-label="Previous project slide">
+              <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <button class="proj-nav-btn" id="projNextBtn" aria-label="Next project slide">
+              <i class="fa-solid fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: ADVANCED PROJECT SOLUTIONS (Image 5 reference) -->
+    <section class="solutions-section" id="solutions" aria-label="Advanced Project Solutions">
+
+      <!-- High-res Dusk Construction Backdrop -->
+      <div class="solutions-bg" style="background-image: url('assets/solutions_bg.jpg');"></div>
+      <div class="solutions-overlay"></div>
+
+      <!-- Concentric CAD Radar Blueprint Rings (Animated Visual from Image 5) -->
+      <div class="cad-radar-container" aria-hidden="true">
+        <div class="radar-circle circle-1"></div>
+        <div class="radar-circle circle-2"></div>
+        <div class="radar-circle circle-3"></div>
+        <div class="radar-circle circle-4"></div>
+        <div class="radar-sweep"></div>
+        <div class="radar-crosshair-h"></div>
+        <div class="radar-crosshair-v"></div>
+        <div class="radar-node node-1"><span>COORDINATE 33.7490° N</span></div>
+        <div class="radar-node node-2"><span>TOLERANCE ±0.02"</span></div>
+      </div>
+
+      <div class="solutions-content-container">
+
+        <span class="solutions-badge" data-i18n="sol.badge">ADVANCED PROJECT SOLUTIONS</span>
+
+        <h2 class="solutions-title" data-i18n="sol.title">From first call<br>to final delivery</h2>
+
+        <p class="solutions-description" data-i18n="sol.desc">
+          With one team and one contract setting the pace, decisions happen faster, coordination is stronger, and
+          momentum never stalls.
+        </p>
+
+        <div class="solutions-action">
+          <a href="#contact" class="btn btn-solutions-cta" data-i18n="sol.cta">SEE THE BENEFITS</a>
+        </div>
+
+        <!-- 3 Key Pillars -->
+        <div class="solutions-pillars-row">
+          <div class="pillar-card">
+            <div class="pillar-number">01</div>
+            <h3 data-i18n="sol.p1_title">Integrated VDC / BIM</h3>
+            <p data-i18n="sol.p1_desc">Full 4D clash detection and robotic layout eliminating rework in the field.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-number">02</div>
+            <h3 data-i18n="sol.p2_title">Self-Perform Strength</h3>
+            <p data-i18n="sol.p2_desc">Directly managing concrete, steel erection, and millwork for guaranteed
+              schedules.</p>
+          </div>
+          <div class="pillar-card">
+            <div class="pillar-number">03</div>
+            <h3 data-i18n="sol.p3_title">Lean Construction</h3>
+            <p data-i18n="sol.p3_desc">Target Value Delivery aligning design parameters directly with client budget
+              ceilings.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: INTERACTIVE FILTERABLE PROJECT CARDS (Card Grid with White, Black, Yellow) -->
+    <section class="portfolio-grid-section" id="projects-grid" aria-label="Projects Portfolio">
+      <div class="portfolio-container">
+
+        <div class="section-header-center">
+          <span class="section-tag yellow-tag">PORTFOLIO</span>
+          <h2 class="section-title-dark">Landmark Projects Across the Nation</h2>
+          <p class="section-lead-dark">
+            Explore our multidisciplinary craftsmanship across mission-critical, federal, and high-rise commercial
+            sectors.
+          </p>
+        </div>
+
+        <!-- Filter Buttons (White/Black/Yellow Pill Design) -->
+        <div class="filter-controls" role="tablist" aria-label="Portfolio categories">
+          <button class="filter-btn active" data-filter="all">All Sectors</button>
+          <button class="filter-btn" data-filter="government">Government</button>
+          <button class="filter-btn" data-filter="commercial">Commercial</button>
+          <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+          <button class="filter-btn" data-filter="industrial">Industrial</button>
+          <button class="filter-btn" data-filter="civil">Heavy Civil</button>
+        </div>
+
+        <!-- Grid of Project Cards -->
+        <div class="projects-grid" id="projectCardsGrid">
+
+          <!-- Card 1: Government -->
+          <div class="project-card" data-category="government">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1541872703-74c5e44368f9?q=80&w=800&auto=format&fit=crop"
+                alt="Federal Judicial Complex" loading="lazy">
+              <span class="card-badge badge-black">GOVERNMENT</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta"><i class="fa-solid fa-location-dot"></i> Huntsville, AL</span>
+              <h3 class="card-title">Federal Justice Center &amp; Annex</h3>
+              <p class="card-text">380,000 sq. ft. courthouse featuring progressive collapse prevention and Level V
+                security certification.</p>
+              <div class="card-stats-row">
+                <div class="card-stat"><strong>$142M</strong><span>Contract Value</span></div>
+                <div class="card-stat"><strong>LEED Gold</strong><span>Sustainability</span></div>
+              </div>
+              <a href="#contact" class="card-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 2: Commercial -->
+          <div class="project-card" data-category="commercial">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=800&auto=format&fit=crop"
+                alt="Commercial Skyscraper" loading="lazy">
+              <span class="card-badge badge-yellow">COMMERCIAL</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta"><i class="fa-solid fa-location-dot"></i> Atlanta, GA</span>
+              <h3 class="card-title">Midtown Tech Horizon Tower</h3>
+              <p class="card-text">42-story Class-A commercial headquarters featuring column-free floor plates and
+                high-speed transit integration.</p>
+              <div class="card-stats-row">
+                <div class="card-stat"><strong>750K</strong><span>Sq. Feet</span></div>
+                <div class="card-stat"><strong>Zero</strong><span>Lost Time Incidents</span></div>
+              </div>
+              <a href="#contact" class="card-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 3: Healthcare -->
+          <div class="project-card" data-category="healthcare">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=800&auto=format&fit=crop"
+                alt="Medical Center" loading="lazy">
+              <span class="card-badge badge-black">HEALTHCARE</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta"><i class="fa-solid fa-location-dot"></i> Birmingham, AL</span>
+              <h3 class="card-title">Children's Pediatric Heart Center</h3>
+              <p class="card-text">State-of-the-art hybrid catheterization labs and neonatal ICU delivered 2 months
+                ahead of schedule.</p>
+              <div class="card-stats-row">
+                <div class="card-stat"><strong>120</strong><span>Critical Beds</span></div>
+                <div class="card-stat"><strong>Pre-fab</strong><span>Modular Headwalls</span></div>
+              </div>
+              <a href="#contact" class="card-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 4: Industrial -->
+          <div class="project-card" data-category="industrial">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?q=80&w=800&auto=format&fit=crop"
+                alt="Automated Manufacturing Facility" loading="lazy">
+              <span class="card-badge badge-yellow">INDUSTRIAL</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta"><i class="fa-solid fa-location-dot"></i> Savannah, GA</span>
+              <h3 class="card-title">Electric Vehicle Battery Gigafactory</h3>
+              <p class="card-text">Rapid design-build mega project boasting 1.2 million sq. ft. of cleanroom
+                manufacturing and robotic automation.</p>
+              <div class="card-stats-row">
+                <div class="card-stat"><strong>1.2M</strong><span>Sq. Footage</span></div>
+                <div class="card-stat"><strong>Fast-Track</strong><span>14 Months</span></div>
+              </div>
+              <a href="#contact" class="card-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 5: Heavy Civil -->
+          <div class="project-card" data-category="civil">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=800&auto=format&fit=crop"
+                alt="Bridge Infrastructure" loading="lazy">
+              <span class="card-badge badge-black">HEAVY CIVIL</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta"><i class="fa-solid fa-location-dot"></i> Jacksonville, FL</span>
+              <h3 class="card-title">St. Johns River Cable-Stayed Bridge</h3>
+              <p class="card-text">Deep foundation marine drilling and post-tensioned segmental concrete spans
+                engineered for severe storms.</p>
+              <div class="card-stats-row">
+                <div class="card-stat"><strong>4,200'</strong><span>Main Span</span></div>
+                <div class="card-stat"><strong>100-Yr</strong><span>Design Life</span></div>
+              </div>
+              <a href="#contact" class="card-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+          <!-- Card 6: Hospitality & Mixed Use -->
+          <div class="project-card" data-category="commercial">
+            <div class="card-image-wrap">
+              <img src="https://images.unsplash.com/photo-1577495508048-b635879837f1?q=80&w=800&auto=format&fit=crop"
+                alt="Lattice Facade Hotel" loading="lazy">
+              <span class="card-badge badge-yellow">COMMERCIAL</span>
+            </div>
+            <div class="card-body">
+              <span class="card-meta"><i class="fa-solid fa-location-dot"></i> Atlanta, GA</span>
+              <h3 class="card-title">FORTH Hotel &amp; Social Club</h3>
+              <p class="card-text">Sculptural diagrid exoskeleton hotel with 196 guestrooms, rooftop club, and custom
+                architectural precast concrete.</p>
+              <div class="card-stats-row">
+                <div class="card-stat"><strong>16</strong><span>Stories</span></div>
+                <div class="card-stat"><strong>Custom</strong><span>Exoskeleton Cast</span></div>
+              </div>
+              <a href="#contact" class="card-link">View Case Study <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: CONTACT / CONSULTATION (High Impact Black & Yellow) -->
+    <section class="contact-section" id="contact" aria-label="Contact Brasfield & Gorrie">
+      <div class="contact-container">
+
+        <div class="contact-info-col">
+          <span class="section-tag yellow-tag">GET STARTED</span>
+          <h2 class="contact-title">Let’s build something extraordinary together.</h2>
+          <p class="contact-desc">
+            Whether you are planning a federal courthouse, a regional healthcare hub, or a complex industrial facility,
+            our preconstruction and self-perform teams are ready.
+          </p>
+
+          <div class="contact-highlights">
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <strong>Headquarters Hotline</strong>
+                <p>+1 (800) 867-2020</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <strong>Bid &amp; RFP Inquiries</strong>
+                <p>projects@brasfieldgorrie.com</p>
+              </div>
+            </div>
+            <div class="highlight-item">
+              <div class="highlight-icon"><i class="fa-solid fa-location-crosshairs"></i></div>
+              <div>
+                <strong>Offices</strong>
+                <p>Atlanta &bull; Birmingham &bull; Charlotte &bull; Dallas &bull; Nashville &bull; Orlando</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-form-col">
+          <div class="contact-form-card">
+            <h3 class="form-title">Start a Project Consultation</h3>
+            <p class="form-subtitle">Fill out the brief and our regional sector leads will respond within 24 hours.</p>
+
+            <form id="projectInquiryForm" class="inquiry-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="fullName">Your Name *</label>
+                  <input type="text" id="fullName" required placeholder="Jane Doe">
+                </div>
+                <div class="form-group">
+                  <label for="emailAddress">Work Email *</label>
+                  <input type="email" id="emailAddress" required placeholder="jane@organization.com">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="projectSector">Market Sector *</label>
+                  <select id="projectSector" required>
+                    <option value="" disabled selected>Select Sector</option>
+                    <option value="government">Government &amp; Civic</option>
+                    <option value="commercial">Commercial / High-Rise</option>
+                    <option value="healthcare">Healthcare &amp; Life Sciences</option>
+                    <option value="heavy-civil">Heavy Civil &amp; Infrastructure</option>
+                    <option value="industrial">Industrial &amp; Manufacturing</option>
+                    <option value="mission-critical">Mission Critical Data Center</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="estimatedBudget">Est. Project Scale</label>
+                  <select id="estimatedBudget">
+                    <option value="tier1">&lt; $25M</option>
+                    <option value="tier2">$25M - $100M</option>
+                    <option value="tier3">$100M - $500M</option>
+                    <option value="tier4">$500M+</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="projectDetails">Project Overview &amp; Location</label>
+                <textarea id="projectDetails" rows="4"
+                  placeholder="Briefly describe project scope, desired completion date, or site specs..."></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-yellow btn-submit">
+                <span>SUBMIT INQUIRY</span>
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+
+              <div class="form-feedback" id="formFeedback">
+                <i class="fa-solid fa-circle-check"></i> Thank you! Your inquiry has been received. A project director
+                will connect with you shortly.
+              </div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- ENTERPRISE FOOTER (Deep Black, White, Yellow Accent) -->
+  <footer class="site-footer" id="footer">
+    <div class="footer-top">
+      <div class="footer-container">
+
+        <!-- Brand & Mission Column -->
+        <div class="footer-brand-col">
+          <a href="#" class="footer-logo">
+            <span class="logo-main">BRASFIELD</span>
+            <span class="logo-amp">&amp;</span>
+            <span class="logo-sub">GORRIE</span>
+          </a>
+          <p class="footer-tagline">
+            Building with purpose, integrity, and relentless innovation since 1964.
+          </p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links: Sectors -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">MARKETS</h4>
+          <ul class="footer-links">
+            <li><a href="#hero" data-sector="commercial">Commercial</a></li>
+            <li><a href="#hero" data-sector="government">Government</a></li>
+            <li><a href="#hero" data-sector="healthcare">Healthcare</a></li>
+            <li><a href="#hero" data-sector="heavy-civil">Heavy Civil</a></li>
+            <li><a href="#hero" data-sector="industrial">Industrial</a></li>
+            <li><a href="#hero" data-sector="mission-critical">Mission Critical</a></li>
+          </ul>
+        </div>
+
+        <!-- Quick Links: Company -->
+        <div class="footer-col">
+          <h4 class="footer-col-title">COMPANY</h4>
+          <ul class="footer-links">
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#careers">Careers &amp; Culture</a></li>
+            <li><a href="#solutions">What We Do</a></li>
+            <li><a href="#featured-projects">News &amp; Media</a></li>
+            <li><a href="#contact">Contact Offices</a></li>
+            <li><a href="#about-us">Safety Record</a></li>
+          </ul>
+        </div>
+
+        <!-- Office Regional Hubs -->
+        <div class="footer-col footer-locations-col">
+          <h4 class="footer-col-title">REGIONAL HUBS</h4>
+          <div class="locations-grid">
+            <div class="loc-item"><strong>Atlanta</strong> GA</div>
+            <div class="loc-item"><strong>Birmingham</strong> AL</div>
+            <div class="loc-item"><strong>Charlotte</strong> NC</div>
+            <div class="loc-item"><strong>Dallas</strong> TX</div>
+            <div class="loc-item"><strong>Greenville</strong> SC</div>
+            <div class="loc-item"><strong>Huntsville</strong> AL</div>
+            <div class="loc-item"><strong>Jackson</strong> MS</div>
+            <div class="loc-item"><strong>Miami</strong> FL</div>
+            <div class="loc-item"><strong>Nashville</strong> TN</div>
+            <div class="loc-item"><strong>Orlando</strong> FL</div>
+            <div class="loc-item"><strong>Raleigh</strong> NC</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer Bottom Legal -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p>&copy; 2026 Brasfield &amp; Gorrie, L.L.C. All Rights Reserved. An Equal Opportunity Employer.</p>
+        <div class="footer-legal-links">
+          <a href="#">Privacy Policy</a>
+          <span>&bull;</span>
+          <a href="#">Terms of Use</a>
+          <span>&bull;</span>
+          <a href="#">Subcontractor Prequalification</a>
+          <span>&bull;</span>
+          <a href="#">Transparency in Coverage</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll-to-Top Floating Button -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Scroll back to top">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+
+</html>
