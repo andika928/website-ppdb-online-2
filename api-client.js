@@ -22,10 +22,16 @@
     const timer=setTimeout(()=>controller.abort(),5000);
     try{
       const response=await fetch(origin+'/api/health',{credentials:'omit',cache:'no-store',signal:controller.signal});
-      if(!response.ok)return false;
+      if(!response.ok){
+        if(response.status===503){
+          const unavailable=await response.json().catch(()=>null);
+          if(unavailable?.code==='DATABASE_NOT_CONFIGURED')throw new APIError(unavailable.error,503,'DATABASE_NOT_CONFIGURED');
+        }
+        return false;
+      }
       const data=JSON.parse(await response.text());
       return data?.service==='st-yoseph-ppdb'&&data.version===1;
-    }catch{return false;}finally{clearTimeout(timer);}
+    }catch(error){if(error instanceof APIError)throw error;return false;}finally{clearTimeout(timer);}
   }
   async function ensureBackend(){
     if(!root.location)return;

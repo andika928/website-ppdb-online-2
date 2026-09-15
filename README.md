@@ -2,7 +2,11 @@
 
 Portal siswa `/ppdb`, panel panitia terpisah `/admin`, dan website profil `/` menggunakan backend Node.js serta database MySQL/MariaDB XAMPP yang sama. Memerlukan Node.js 24 atau lebih baru dan paket `mysql2`. Tidak memakai API AI. Biaya server/domain, jika dipublikasikan, mengikuti penyedia hosting.
 
-## Menjalankan
+## Deployment Vercel
+
+Konfigurasi Vercel tersedia di `vercel.json`; lihat [panduan deployment](DEPLOY-VERCEL.md). Frontend dapat diterbitkan tanpa database. Pendaftaran, login, dan CMS memerlukan MySQL online yang dikonfigurasi melalui environment Vercel. Database XAMPP lokal tidak otomatis ikut deployment. File `.env`, database siswa, serta backup tidak diunggah.
+
+## Menjalankan lokal
 
 Aktifkan MySQL XAMPP, atur `max_allowed_packet=16M` di bagian `[mysqld]` pada `my.ini`, lalu restart MySQL. Jalankan `npm ci`, salin `.env.example` ke `.env` jika belum ada, dan sesuaikan koneksi database. Jalankan `npm run db:setup`.
 

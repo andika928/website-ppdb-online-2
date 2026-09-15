@@ -1,0 +1,17 @@
+.git
+.env
+.env.*
+data
+tmp_chrome
+node_modules
+public
+tests
+*.log
+*.sqlite*
+*.bundle
+*.png
+images*.jpg
+capture_*.js
+take_all_screenshots.js
+download_assets.js
+index.before-school.html

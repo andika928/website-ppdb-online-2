@@ -4,13 +4,13 @@
   "private": true,
   "scripts": {
     "start": "node server.js",
-    "test": "node --test tests/ppdb.test.js tests/api-client.test.js tests/mysql.test.js",
+    "test": "node --test tests/ppdb.test.js tests/api-client.test.js tests/mysql.test.js tests/vercel.test.js",
     "admin:create": "node server.js --create-admin",
     "db:setup": "node scripts/db-setup.js",
     "db:migrate": "node scripts/migrate-sqlite.js"
   },
   "engines": {
-    "node": ">=24"
+    "node": "24.x"
   },
   "dependencies": {
     "mysql2": "^3.24.4"

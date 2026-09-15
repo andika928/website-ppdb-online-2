@@ -5,14 +5,18 @@ const path = require('node:path');
 const { AsyncLocalStorage } = require('node:async_hooks');
 const { loadEnvFile } = require('node:process');
 const envFile = path.join(__dirname, '.env');
-if (fs.existsSync(envFile)) loadEnvFile(envFile);
+if (!process.env.VERCEL && fs.existsSync(envFile)) loadEnvFile(envFile);
 
 function config() {
   const database = process.env.DB_NAME || 'ppdb';
   if (!/^[a-zA-Z0-9_]+$/.test(database)) throw new Error('DB_NAME hanya boleh berisi huruf, angka, dan garis bawah.');
   return { host: process.env.DB_HOST || '127.0.0.1', port: Number(process.env.DB_PORT || 3306),
     user: process.env.DB_USER || 'root', password: process.env.DB_PASSWORD || '', database,
-    charset: 'utf8mb4', connectionLimit: 10, multipleStatements: false };
+    charset: 'utf8mb4', connectionLimit: process.env.VERCEL ? 5 : 10,
+    maxIdle: process.env.VERCEL ? 2 : 10, idleTimeout: 5000,
+    connectTimeout: 10000, multipleStatements: false,
+    ...(process.env.DB_SSL === 'true' ? {ssl:{rejectUnauthorized:true,
+      ...(process.env.DB_SSL_CA ? {ca:process.env.DB_SSL_CA.replace(/\\n/g,'\n')} : {})}} : {}) };
 }
 
 async function openDatabase(options = config()) {
